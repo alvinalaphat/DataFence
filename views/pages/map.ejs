@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css"
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mapwize@3.2.0/mapwize.js"></script>
+      <style>
+      #mapwize {
+        width: 100%;
+        height: 750px;
+        }
+      </style>
+</head>
+
+<body>
+
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/home">
+                Nova
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item" href="/updates">
+                    Updates
+                </a>
+                <a class="navbar-item" href="/contact">
+                    Contact Authorities
+                </a>
+
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <section class="hero">
+      <div id="mapwize"></div>
+    </section>
+
+        <script src="../js/bulma.js"></script>
+        <!-- SCRIPTS -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/smoothscroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script type="text/javascript">
+        var ExpressScriptsHallVenueId = '5dce3c34e5447e0051787169';
+  Mapwize.apiKey('7ac5381c88abaf3a79d8a8420fda84fc')
+  Mapwize.map({
+      container: 'mapwize',
+      minZoom: 19
+  }, {
+    venueId: ExpressScriptsHallVenueId
+  }).then(map => {
+      map.centerOnVenue(ExpressScriptsHallVenueId);
+  }).catch(err => {
+      // Something bad happened during Mapwize loading
+      console.error(err);
+  });
+        </script>
+</body>
+
+</html>
